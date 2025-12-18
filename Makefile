@@ -9,6 +9,8 @@ endif
 
 include $(DEVKITARM)/gba_rules
 
+export REPO_PATH := $(abspath $(dir $(firstword $(MAKEFILE_LIST))))
+
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output, if this ends with _mb a multiboot image is generated
 # BUILD is the directory where object files & intermediate files will be placed
@@ -55,7 +57,7 @@ LIBS	:=	-lgba -ltonc -lgraph
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=	$(LIBGBA) $(DEVKITARM)/../libtonc $(DEVKITARM)/../libgraph
+LIBDIRS	:=	$(LIBGBA) $(DEVKITARM)/../libtonc ${REPO_PATH}/external/lib-gba
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
