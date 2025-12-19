@@ -23,7 +23,8 @@ int main(int argc, char const *argv[])
     while (true)
     {
         demo.process(i);
-        video::waitVBlank();
+        waitVBlank();//
+        //video::waitVBlank();
         i++;
     }
     LOG_WARNING("Program finished");
