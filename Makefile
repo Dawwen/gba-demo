@@ -51,7 +51,7 @@ export PATH		:=	$(DEVKITARM)/bin:$(PATH)
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:=	-lgba -ltonc -lgraph
+LIBS	:=	-lgraph -ltonc -lgba
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
