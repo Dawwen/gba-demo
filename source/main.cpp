@@ -11,11 +11,10 @@
 extern void*  __start_animation_resource[];
 extern void*  __stop_animation_resource[];
 
-const u32 SUBARU_ID = 1;
-
 int main(int argc, char const *argv[])
 {
     video::createResourceManager(__start_animation_resource, __stop_animation_resource);
+    setInterupt();
     Demo demo;
     demo.init();
     
@@ -23,8 +22,7 @@ int main(int argc, char const *argv[])
     while (true)
     {
         demo.process(i);
-        waitVBlank();//
-        //video::waitVBlank();
+        waitVBlank();
         i++;
     }
     LOG_WARNING("Program finished");
