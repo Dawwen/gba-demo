@@ -198,8 +198,8 @@ void Demo::init()
 
     clear_map(memoryBuffer_map.ptr);
     
-    write_in_map(memoryBuffer_map.ptr, 1,1, "A to send Hello World!", 22);
-    write_in_map(memoryBuffer_map.ptr, 1,3, "B to clear", 10);
+    // write_in_map(memoryBuffer_map.ptr, 1,1, "A to send Hello World!", 22);
+    // write_in_map(memoryBuffer_map.ptr, 1,3, "B to clear", 10);
 
     comm_menu = {0, 1, 0, 3, false};
 }
