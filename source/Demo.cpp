@@ -220,32 +220,6 @@ void Demo::process(u32 i)
     if      (key_pushed(KEY_A))    { a_state = 1; }
     if      (key_pushed(KEY_B))    { b_state = 1; }
 
-    const char * data = "Hello World!\n";
-    if (key_hit(KEY_A))
-    {
-        snd_uart_ret(data, 13);
-    }
-
-    if (key_hit(KEY_B))
-    {
-        clear_map(memoryBuffer_map.ptr);
-        write_in_map(memoryBuffer_map.ptr, 1,1, "A to send Hello World!", 22);
-        write_in_map(memoryBuffer_map.ptr, 1,3, "B to clear", 10);
-    }
-
-    u32 size;
-    if (size = circ_bytes_available(&g_uart_rcv_buffer))
-    {
-        for (u32 i = 0; i < size; i++)
-        {
-            char c;
-            read_circ_char(&g_uart_rcv_buffer, &c);
-            write_in_map(memoryBuffer_map.ptr, 2 + i, 5, &c, 1);
-        }
-        
-    }
-    
-
     update_sprite_vram(subaru_resource, i / 5);
     update_sprite_vram(direction_resource, direction_state);
     update_sprite_vram(a_resource, a_state);
